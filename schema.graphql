@@ -1,6 +1,6 @@
 type SystemInfo @entity {
   id: ID!
-  walletCount: BigInt!
+  userCount: BigInt!
 }
 
 type VoltBalances @entity {
