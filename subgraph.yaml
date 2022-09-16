@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.4
 schema:
   file: ./schema.graphql
 dataSources:
@@ -10,7 +10,7 @@ dataSources:
       abi: VoltToken
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
         - Approval
@@ -22,14 +22,6 @@ dataSources:
         - name: VoltToken
           file: ./abis/VoltToken.json
       eventHandlers:
-        - event: Approval(indexed address,indexed address,uint256)
-          handler: handleApproval
-        - event: DelegateChanged(indexed address,indexed address,indexed address)
-          handler: handleDelegateChanged
-        - event: DelegateVotesChanged(indexed address,uint256,uint256)
-          handler: handleDelegateVotesChanged
-        - event: OwnershipTransferred(indexed address,indexed address)
-          handler: handleOwnershipTransferred
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
       file: ./src/volt-token.ts

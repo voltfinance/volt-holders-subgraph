@@ -1,6 +1,10 @@
-type ExampleEntity @entity {
+type SystemInfo @entity {
   id: ID!
-  count: BigInt!
-  owner: Bytes! # address
-  spender: Bytes! # address
+  walletCount: BigInt!
+}
+
+type VoltBalances @entity {
+  id: ID!
+  balance: BigInt!
+  owner: Bytes!
 }
